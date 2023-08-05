@@ -1,6 +1,7 @@
 import {useEffect, useState} from 'react'
 import axios from 'axios'
 import './App.css';
+import MovieCard from './Components/MovieCard';
 
 function App() {
 
@@ -25,9 +26,9 @@ function App() {
   },[])
 
   const rendermovies = () => {
-    movies.map(movie => {
-      <MovieCard/>
-    })
+    movies.map(movie => (
+      <MovieCard key={movie.id} movie={movie}/>
+    ))
   }
 
   return (
